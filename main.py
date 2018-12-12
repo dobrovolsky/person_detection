@@ -9,7 +9,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument('-v', '--video', help='path to the video file')
 args = vars(ap.parse_args())
 
-vs = VideoStream(args['video']).start()
+vs = VideoStream(args['video'] or 0).start()
 
 need_to_detect = Queue(maxsize=100)
 
